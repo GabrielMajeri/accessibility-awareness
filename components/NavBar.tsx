@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
-import { useState } from "react";
 import Logo from "./Logo";
 
 const NavBar: React.FC = () => (
@@ -14,8 +15,22 @@ const NavBar: React.FC = () => (
 );
 
 const NavMenu: React.FC = () => {
-  const [shown, setShown] = useState(true);
+  // The nav menu is initially not shown
+  const [shown, setShown] = useState(false);
   const navMenuClass = shown ? "" : "hidden";
+
+  // We want to hide the menu after the user navigates to a new page
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = () => setShown(false);
+
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, []);
+
   return (
     <div className="float-right">
       <button className="md:hidden" onClick={() => setShown(!shown)}>
