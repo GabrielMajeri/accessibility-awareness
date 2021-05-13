@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ExternalLink from "../components/ExternalLink";
 import PageHeading from "../components/PageHeading";
 
 const AssistiveTechnologies: React.FC = () => (
@@ -31,6 +32,14 @@ const AssistiveTechnologies: React.FC = () => (
         imageSrc="/assistive-technologies/lexend-deca-specimen.png"
       />
     </div>
+    <footer className="bg-gradient-to-b from-gray-200 to-white">
+      <p className="p-4 pb-8 text-center">
+        Un site excelent pentru achiziționarea acestor produse este{" "}
+        <ExternalLink href="https://beindependent.ro/" className="underline">
+          BeIndependent.ro
+        </ExternalLink>
+      </p>
+    </footer>
   </>
 );
 

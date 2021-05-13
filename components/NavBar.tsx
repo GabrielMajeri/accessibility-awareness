@@ -33,15 +33,17 @@ const NavMenu: React.FC = () => {
 
   return (
     <div className="float-right">
-      <button className="md:hidden" onClick={() => setShown(!shown)}>
+      <button className="xl:hidden" onClick={() => setShown(!shown)}>
         <img src="/hamburger-menu-icon.svg" alt="Meniu" />
       </button>
       <ul
-        className={`absolute right-0 flex flex-col bg-indigo-900 shadow-md md:shadow-none ${navMenuClass} md:block`}
+        className={`absolute right-0 flex flex-col bg-indigo-900 shadow-md xl:shadow-none ${navMenuClass} xl:block`}
       >
         <NavLink href="/about" label="Despre" />
         <NavLink href="/assistive-technologies" label="Tehnologii asistive" />
+        <NavLink href="/success-stories" label="Povești de succes" />
         <NavLink href="/economic-benefits" label="Beneficii economice" />
+        <NavLink href="/employment-resources" label="Resurse pentru angajare" />
         <NavLink href="/calendar" label="Calendar" />
       </ul>
     </div>
@@ -53,7 +55,7 @@ const NavLink: React.FC<{
   label: string;
 }> = ({ href, label }) => (
   <Link href={href}>
-    <a className="text-center px-4 py-2 md:mr-3">{label}</a>
+    <a className="text-center px-4 py-2 xl:mr-3">{label}</a>
   </Link>
 );
 
