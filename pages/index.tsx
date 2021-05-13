@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ExternalLink from "../components/ExternalLink";
 import InternalLink from "../components/InternalLink";
 
@@ -26,7 +27,7 @@ const Home: React.FC = () => (
         <p className="text-lg mb-2">Noi credem că și ei pot lucra.</p>
         <a
           href="#find-out-more"
-          className="m-6 px-5 py-3 rounded-lg bg-blue-800 text-xl shadow-lg"
+          className="m-6 px-5 py-3 rounded-lg ring-4 bg-blue-800 text-xl shadow-lg"
         >
           Află mai multe
         </a>
@@ -42,47 +43,52 @@ const Home: React.FC = () => (
         </small>
       </div>
     </section>
-    <section className="h-screen" id="find-out-more">
-      <p>
-        Am pregătit o serie de resurse care te pot ajuta să înțelegi mai bine
-        barierele cu care se confruntă persoanele cu dizabilități și cum le pot
-        depăși.
+    <section
+      className={`min-h-screen bg-gray-100 ${styles.findOutMore}`}
+      id="find-out-more"
+    >
+      <p className="mx-auto max-w-2xl p-5">
+        Am pregătit o serie de resurse care te pot ajuta să înțelegi mai bine{" "}
+        <strong>barierele</strong> cu care se confruntă persoanele cu
+        dizabilități și cum le pot <strong>depăși</strong>.
       </p>
       <div>
-        <Card>
-          Descoperă{" "}
-          <InternalLink href="/assistive-technologies">
-            tehnologiile
-          </InternalLink>{" "}
-          care ajută persoanele cu dizabilități să reușească
+        <Card href="/assistive-technologies">
+          Descoperă <b>tehnologiile</b> care ajută persoanele cu dizabilități să
+          reușească
         </Card>
-        <Card>
-          Citește{" "}
-          <InternalLink href="/success-stories">
-            poveștile lor de succes
-          </InternalLink>
+        <Card href="/success-stories">
+          Citește <b>poveștile lor de succes</b>
         </Card>
-        <Card>
-          Află ce{" "}
-          <InternalLink href="/economic-benefits">
-            beneficii economice
-          </InternalLink>{" "}
-          aduce integrarea persoanelor cu dizabilități în piața muncii
+        <Card href="/economic-benefits">
+          Află ce <b>beneficii economice</b> aduce integrarea persoanelor cu
+          dizabilități în piața muncii
         </Card>
-        <Card>
+        <Card href="/employment-resources">
           Ești o persoană cu dizabilități și îți dorești să te angajezi? Vezi ce{" "}
-          <InternalLink href="/employment-resources">resurse</InternalLink>{" "}
-          ți-ar putea fi de ajutor!
+          <b>resurse</b> ți-ar putea fi de ajutor!
         </Card>
-        <Card>
-          <InternalLink href="/calendar">Calendarul</InternalLink> zilelor
-          dedicate persoanelor cu dizabilități
+        <Card href="/calendar">
+          Parcurge <b>calendarul</b> zilelor dedicate persoanelor cu
+          dizabilități
         </Card>
       </div>
+    </section>
+    <section className="bg-gray-200">
+      <p className="p-3 text-center">
+        Află mai multe despre{" "}
+        <InternalLink href="/about">acest proiect</InternalLink>.
+      </p>
     </section>
   </>
 );
 
-const Card: React.FC = ({ children }) => <div className="m-3">{children}</div>;
+const Card: React.FC<{ href: string }> = ({ href, children }) => (
+  <Link href={href}>
+    <a className="block mx-auto my-2 p-4 max-w-md bg-white rounded border-2 border-gray-400 shadow">
+      {children}
+    </a>
+  </Link>
+);
 
 export default Home;

@@ -1,3 +1,7 @@
 .hero {
   height: calc(100vh - 44px);
 }
+
+.findOutMore {
+  border-top: 8px solid gray;
+}

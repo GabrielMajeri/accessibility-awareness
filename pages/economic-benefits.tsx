@@ -3,7 +3,13 @@ import React from "react";
 const EconomicBenefits: React.FC = () => {
   return (
     <>
-      <p>Beneficii economice</p>
+      <header className="m-4">
+        <PageHeading text="Beneficii economice" />
+        <p>
+          Mai jos îți prezentăm principalele avantaje economice produse de
+          integrarea persoanelor cu dizabilități în forța de muncă.
+        </p>
+      </header>
       <p>
         Conform unui studiu organizat de cei de la Accenture pe 140 de companii
         din America, firmele cu o deschidere spre angajarea persoanelor cu
