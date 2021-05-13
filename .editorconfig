@@ -1,0 +1,20 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# This is the top-most EditorConfig file
+root = true
+
+[*]
+# Use the UTF-8 character encoding
+charset = utf-8
+# Use the UNIX end-of-line character
+end_of_line = lf
+
+# Make sure all files end with a newline
+insert_final_newline = true
+# Remove trailing whitespace at ends-of-lines
+trim_trailing_whitespace = true
+
+[*.{ts,tsx}]
+# Default indentation style recommended by Prettier
+indent_style = space
+indent_size = 2
