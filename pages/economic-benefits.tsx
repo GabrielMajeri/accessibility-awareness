@@ -1,22 +1,6 @@
 import React from "react";
-import BarChart from "../components/BarChart";
 
 const EconomicBenefits: React.FC = () => {
-  const dataGraf1 = [
-    { label: "Companii incluzive", sales: 50 },
-    { label: "Companii normale", sales: 39 },
-  ];
-
-  const dataGraf2 = [
-    { label: "Companii incluzive", sales: 5.7 },
-    { label: "Companii normale", sales: 2.7 },
-  ];
-
-  const dataGraf3 = [
-    { label: "Companii incluzive", sales: 16 },
-    { label: "Companii normale", sales: 12 },
-  ];
-
   return (
     <>
       <p>Beneficii economice</p>
@@ -26,9 +10,12 @@ const EconomicBenefits: React.FC = () => {
         dizabilități au avut, în medie, cu 28% venituri mai mari, un venit net
         dublu și marje de profit economic cu 30% mai mari.{" "}
       </p>
-      <BarChart data={dataGraf1} />
-      <BarChart data={dataGraf2} />
-      <BarChart data={dataGraf3} />
+      <img src="/plot_Revenue.png" alt="Revenue Graph"></img>
+      <img src="/plot_NetIncome.png" alt="Net Income Graph"></img>
+      <img
+        src="/plot_EconomicProfitMargin.png"
+        alt="Economic Profit Margin Graph"
+      ></img>
       <p>
         Firmele ce includ persoanele cu dizabilități sunt de două ori mai
         probabil să primească venituri mai mari de la shareholderi față de
