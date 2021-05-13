@@ -1,5 +1,11 @@
+import PageHeading from "../components/PageHeading";
+
 const About: React.FC = () => (
   <>
+    <header className="m-4">
+      <PageHeading text="Despre" />
+    </header>
+
     <p>
       Conform Convenției Națiunilor Unite privind drepturile persoanelor cu
       dizabilități, „Persoanele cu dizabilitãţi includ acele persoane care au

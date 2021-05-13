@@ -40,6 +40,8 @@ const NavMenu: React.FC = () => {
         className={`absolute right-0 flex flex-col bg-indigo-900 shadow-md md:shadow-none ${navMenuClass} md:block`}
       >
         <NavLink href="/about" label="Despre" />
+        <NavLink href="/assistive-technologies" label="Tehnologii asistive" />
+        <NavLink href="/economic-benefits" label="Beneficii economice" />
         <NavLink href="/calendar" label="Calendar" />
       </ul>
     </div>

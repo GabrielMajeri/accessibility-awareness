@@ -7,6 +7,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 import { format, parse, startOfWeek, getDay } from "date-fns";
 import roLocale from "date-fns/locale/ro";
+import PageHeading from "../components/PageHeading";
 
 const localizer = dateFnsLocalizer({
   format,
@@ -71,11 +72,13 @@ const MESSAGES_RO: Messages = {
 
 const Calendar: React.FC = () => (
   <>
-    <h1 className="m-4 text-2xl font-bold text-center">Calendar</h1>
-    <p className="m-4 text-center">
-      Această pagină afișează toate zilele internaționale pentru persoanele cu
-      dizabilități din perioada următoare.
-    </p>
+    <header className="m-4">
+      <PageHeading text="Calendar" />
+      <p className="text-center">
+        Această pagină afișează toate zilele internaționale pentru persoanele cu
+        dizabilități din perioada următoare.
+      </p>
+    </header>
     <ReactBigCalendar
       culture="ro-RO"
       localizer={localizer}
