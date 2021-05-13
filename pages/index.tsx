@@ -44,10 +44,10 @@ const Home: React.FC = () => (
       </div>
     </section>
     <section
-      className={`h-screen bg-gray-100 ${styles.findOutMore}`}
+      className={`min-h-screen bg-gray-100 ${styles.findOutMore}`}
       id="find-out-more"
     >
-      <p className="p-5">
+      <p className="mx-auto max-w-2xl p-5">
         Am pregătit o serie de resurse care te pot ajuta să înțelegi mai bine{" "}
         <strong>barierele</strong> cu care se confruntă persoanele cu
         dizabilități și cum le pot <strong>depăși</strong>.
@@ -85,7 +85,7 @@ const Home: React.FC = () => (
 
 const Card: React.FC<{ href: string }> = ({ href, children }) => (
   <Link href={href}>
-    <a className="block m-2 p-4 bg-white rounded border-2 border-gray-400 shadow">
+    <a className="block mx-auto my-2 p-4 max-w-md bg-white rounded border-2 border-gray-400 shadow">
       {children}
     </a>
   </Link>
